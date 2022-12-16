@@ -1,0 +1,26 @@
+name: .NET Core
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 3.1
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build app
+      run: dotnet publish -r win-x64 --configuration ReleaseComplete
+      
+    - name: Docker Hub login
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+    - name: Docker Build Image
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/cookingapp-aspnet:latest .
+    - name: Upload container to Docker Hub with Push
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/cookingapp-aspnet:latest
