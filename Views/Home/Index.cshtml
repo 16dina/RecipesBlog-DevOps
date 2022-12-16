@@ -1,0 +1,149 @@
+﻿@using Contentful.Core.Models;
+
+@model ContentfulCollection<DishTypes>
+
+@{
+    ViewData["Title"] = "Dish Types";
+}
+
+<head>
+    <style>
+        .column {
+            float: left;
+            width: 33.3%;
+            padding: 0 10px;
+        }
+
+        .row {margin: 0 -5px;}
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+        }
+
+        body {
+            background-color: #C48F65;
+        }
+
+        .card button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #ddd;
+        }
+
+            /* Create an active/current tablink class */
+        .card button.active {
+            background-color: #ccc;
+        }
+
+        h5 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        @* /* Responsive columns - one column layout (vertical) on small screens */
+        @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        } *@
+}
+    </style>
+</head>
+
+@* <body>
+    <h1>Dish Types</h1>
+    <div class="row">
+        @foreach (var dishType in Model) {
+            <div class="column">
+                <div class="card">
+                    <h2>@dishType.TypeName</h2>
+                    <p>@dishType.Dish1</p>
+                    <p>@dishType.Dish2</p>
+                    <img src="@dishType.TypeImage.File.Url" alt="@dishType.TypeImage.Title" width="200"/>
+                </div>
+            </div>
+        }   
+    </div>
+</body> *@
+
+<div class="w3-center" style="margin: 15%;">
+    <span class="w3-text-white w3-hide-small" style="font-size:100px">A taste of the<br>MIDDLE EAST</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>A taste of the<br>MIDDLE EAST</b></span>
+    <h5>
+        Have you ever been to the middle east? If not, then have you ever tried middle eastern food? If you also haven't done that, then you're
+        definitely missing out! Middle eastern cuisine is simply elite. But what if you don't have any place that sells it around you? No worries!
+        In this blog, we collected some of the most famous middle eastern dishes for you. For every dish a tutorial is provided so you can follow along 
+        and become the next top chef! So let's get started...
+    </h5><br>
+    <p><a href="#menu" class="w3-button w3-xxlarge w3-black">View the meal courses</a></p>
+</div>
+
+
+
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+  
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">COURSES</h1>
+    <div class="row">
+        @foreach (var dishType in Model) {
+            <div class="column">
+                <div class="card">
+                    <div style="width:100%; text-align:center">
+                        <img src="@dishType.TypeImage.File.Url" alt="@dishType.TypeImage.Title" style="width: 100%; height:auto; margin-bottom:5%;"/>
+                    </div>
+                    <button class="tablinks" onclick="openMenu(event, '@dishType.TypeName')">View Dishes</button>
+
+                    <div id="@dishType.TypeName" class="tabcontent" style="display: none; color: black;">
+                        <h1><b>@dishType.Dish1</b></h1>
+                        <h1><b>@dishType.Dish2</b></h1>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function openMenu(evt, @dishType.TypeName) {
+                    // Declare all variables
+                    var i, tabcontent, tablinks;
+
+                    // Get all elements with class="tabcontent" and hide them
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+
+                    // Get all elements with class="tablinks" and remove the class "active"
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+
+                    // Show the current tab, and add an "active" class to the button that opened the tab
+                    document.getElementById(@dishType.TypeName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                }
+            </script>
+        }   
+    </div>
+
+  </div>
+</div>
+
+<div class="text-center" style="margin: 3%;">
+    <h1 class="display-4">Thanks for visiting our blog!</h1>
+</div>
