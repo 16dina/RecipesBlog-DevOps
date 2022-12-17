@@ -46,7 +46,6 @@
             background-color: #ddd;
         }
 
-            /* Create an active/current tablink class */
         .card button.active {
             background-color: #ccc;
         }
@@ -55,32 +54,8 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
-        @* /* Responsive columns - one column layout (vertical) on small screens */
-        @media screen and (max-width: 600px) {
-        .column {
-            width: 100%;
-            display: block;
-            margin-bottom: 20px;
-        } *@
-}
     </style>
 </head>
-
-@* <body>
-    <h1>Dish Types</h1>
-    <div class="row">
-        @foreach (var dishType in Model) {
-            <div class="column">
-                <div class="card">
-                    <h2>@dishType.TypeName</h2>
-                    <p>@dishType.Dish1</p>
-                    <p>@dishType.Dish2</p>
-                    <img src="@dishType.TypeImage.File.Url" alt="@dishType.TypeImage.Title" width="200"/>
-                </div>
-            </div>
-        }   
-    </div>
-</body> *@
 
 <div class="w3-center" style="margin: 15%;">
     <span class="w3-text-white w3-hide-small" style="font-size:100px">A taste of the<br>MIDDLE EAST</span>
