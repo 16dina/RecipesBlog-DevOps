@@ -21,14 +21,30 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 5.0.x
+        
     - name: Restore dependencies
       run: dotnet restore
+      
     - name: Build app
+      run: dotnet build --configuration Release --no-restore
+      
+    - name: Test app
+      run: dotnet test --no-restore --verbosity normal
+    
+    - name: Publish app
       run: dotnet publish -r win-x64 --configuration ReleaseComplete
+      
+    - name: Upload caseStudy Build Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: caseStudy
+        path: bin/Release/net3.1/win-x64/publish/caseStudy.exe
       
     - name: Docker Hub login
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      
     - name: Docker Build Image
       run: docker build -t ${{ secrets.DOCKER_USERNAME }}/cookingapp-aspnet:latest .
+      
     - name: Upload container to Docker Hub with Push
       run: docker push ${{ secrets.DOCKER_USERNAME }}/cookingapp-aspnet:latest
