@@ -15,6 +15,10 @@ namespace caseStudy.Models
         public string MainDishDescription {get; set;}
 
         public string MainDishTutorial {get; set;}
+
+        public Boolean isVegetarian {get; set;}
+
+        public int CookingTime {get; set;}
     }
 
 

@@ -15,6 +15,8 @@ namespace caseStudy.Models
         public string DessertDescription {get; set;}
 
         public string DessertTutorial {get; set;}
+
+        public int CookingTime {get; set;}
     }
 
 
