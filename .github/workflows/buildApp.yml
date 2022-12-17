@@ -38,7 +38,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: caseStudy
-        path: bin/Release/netcoreapp3.1/caseStudy.exe
+        path: /home/runner/work/caseStudy/caseStudy/bin/ReleaseComplete/netcoreapp3.1/win-x64/publish/
       
     - name: Docker Hub login
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
