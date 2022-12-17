@@ -23,6 +23,7 @@ namespace caseStudy.Controllers
             _logger = logger;
         }
 
+
         public async Task<IActionResult> Index()
         {
             var dishTypes = await _client.GetEntriesByType<DishTypes>("dishType");
@@ -47,10 +48,6 @@ namespace caseStudy.Controllers
             return View(desserts);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
