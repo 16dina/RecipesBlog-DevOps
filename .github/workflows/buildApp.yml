@@ -26,4 +26,4 @@ jobs:
       run: docker push ${{ secrets.DOCKER_USERNAME }}/cookingapp-aspnet:latest
       
     - name: Run Docker Compose to start container
-      run: docker compose up -d
+      run: docker-compose -f "docker-compose.yml" up -d --build
