@@ -3,4 +3,4 @@ services:
  cookingapp:
   image: dinaboshnaq/cookingapp-aspnet:latest
   ports:
-    - "8000:80"
+    - "80:80"
