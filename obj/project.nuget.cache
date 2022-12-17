@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "P7OZBg2QgYjWuO4yDhbSsGHNAqBf/IXfr2pv0014n1CsOkp41bLW7Z746RQwiyXXqr9EGmj1Ooe3HL53eX5Rzw==",
+  "dgSpecHash": "gLhJ7+R2JouZqrJYtbJD++3n6cONI7YNzGwe15eYRAjgjCax66EVQt+wnKdbLbKkO0NmjUn08Hj0khV5KHf0XA==",
   "success": true,
   "projectFilePath": "C:\\Users\\dinab\\OneDrive - Thomas More\\Desktop\\caseStudy\\caseStudy.csproj",
   "expectedPackageFiles": [
@@ -160,7 +160,8 @@
     "C:\\Users\\dinab\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\dinab\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\dinab\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
-    "C:\\Users\\dinab\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\dinab\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\dinab\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.31\\microsoft.netcore.app.host.win-x64.3.1.31.nupkg.sha512"
   ],
   "logs": []
 }

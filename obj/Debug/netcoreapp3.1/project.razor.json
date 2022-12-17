@@ -14768,16 +14768,6 @@
   "RootNamespace": "caseStudy",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\dinab\\OneDrive - Thomas More\\Desktop\\caseStudy\\Views\\Home\\test.cshtml",
-      "TargetPath": "Views\\Home\\test.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\dinab\\OneDrive - Thomas More\\Desktop\\caseStudy\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\dinab\\OneDrive - Thomas More\\Desktop\\caseStudy\\Views\\Home\\Appetizers.cshtml",
       "TargetPath": "Views\\Home\\Appetizers.cshtml",
       "FileKind": "mvc"
