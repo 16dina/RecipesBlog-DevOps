@@ -4,6 +4,7 @@ WORKDIR /app
 
 # Copy the CSPROJ file which is caseStudy.csproj and restore any dependecies (via NUGET package manager)
 COPY *.csproj ./
+RUN dotnet restore
 
 # Copy all our project's files and build our release
 COPY . ./
